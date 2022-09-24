@@ -39,8 +39,11 @@ function show(req,res){
     res.render('flights/show',{
       title: 'Flight Details',
       flight: flight,
-    }
-    )
+    })
+  })
+  .catch(error => {//if there's an error console.log it and redirect home
+    console.log(error, "create error")
+    res.redirect('/')
   })
 }
 
@@ -51,6 +54,19 @@ function edit(req,res){
       title: 'Edit Flight',
       flight: flight,
     })
+  })
+  .catch(error => {//if there's an error console.log it and redirect home
+    console.log(error, "create error")
+    res.redirect('/')
+  })
+}
+
+function update(req,res){
+  console.log('update')
+  Flight.findByIdAndUpdate(req.params.id, req.body, 
+    {new: true})
+  .then(flight => {
+    res.redirect(`/flights/${flight._id}`)
   })
 }
 
@@ -74,5 +90,6 @@ export{
   index,
   deleteFlight as delete,
   show,
-  edit
+  edit,
+  update
 }

@@ -21,7 +21,10 @@ router.get('/:id/edit', flightsCtrl.edit)
 router.post('/', flightsCtrl.create)
 
 // POST flights/:id override ?_method=DELETE
-router.post('/:id', flightsCtrl.delete )
+router.delete('/:id', flightsCtrl.delete )
+
+// PUT flight/:id override ?_method=PUT
+router.put('/:id/', flightsCtrl.update)
 
 export {
   router
