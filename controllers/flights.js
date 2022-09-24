@@ -21,7 +21,7 @@ function create(req,res){
 // finds Flights, renders the index page, passing Flights to it
 function index(req,res){
   Flight.find({})
-  .then(flights => {
+  .then(flights => { //the returned array
     res.render('flights/index', {
       title: "All Flights",
       flights: flights
@@ -30,6 +30,17 @@ function index(req,res){
   .catch(error => {//if there's an error console.log it and redirect home
     console.log(error, "create error")
     res.redirect('/')
+  })
+}
+
+function show(req,res){
+  Flight.findById(req.params.id)
+  .then(flight => {
+    res.render('flights/show',{
+      title: 'Flight Details',
+      flight: flight,
+    }
+    )
   })
 }
 
@@ -51,5 +62,6 @@ export{
   newFlight as new,
   create,
   index,
-  deleteFlight as delete
+  deleteFlight as delete,
+  show
 }

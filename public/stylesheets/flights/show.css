@@ -12,14 +12,15 @@ table {
   font-size: 20px;
 }
 
-table thead th {
+table th {
   padding: 5px;
-  border-bottom: 2px solid #424748;
+  text-align: right;
+  /* border-bottom: 2px solid #424748; */
 }
 
 table td {
   padding: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 form * {

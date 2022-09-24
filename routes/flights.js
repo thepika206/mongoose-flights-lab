@@ -11,6 +11,9 @@ router.get('/', flightsCtrl.index)
 // GET flights/new   flight form
 router.get('/new', flightsCtrl.new)
 
+// GET flights/:id
+router.get('/:id', flightsCtrl.show)
+
 // POST flights .create a new flight from form
 router.post('/', flightsCtrl.create)
 

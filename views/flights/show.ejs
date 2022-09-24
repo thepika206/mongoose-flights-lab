@@ -1,0 +1,49 @@
+<%- include('../partials/html-head') %> 
+<link rel="stylesheet" href="/stylesheets/flights/show.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form action="/flights">
+    <button>Edit Flight Details</button>
+  </form>
+  <table>
+    <tbody>
+      <tr>
+        <th>
+          Departure Date:
+        </th>
+        <td>
+          <%= flight.departs %> 
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Airline:
+        </th>
+        <td>
+          <%= flight.airline %> 
+        </td>
+      </tr>
+      <tr>
+        <th>
+          FLight Number:
+        </th>
+        <td>
+          <%= flight.flightNo %> 
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Destination Airport:
+        </th>
+        <td>
+          <%= flight.airport %> 
+        </td>
+      </tr>
+    </tbody>
+    
+  </table>
+</main>
+
+<%- include('../partials/footer') %>
