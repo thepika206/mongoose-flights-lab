@@ -18,8 +18,25 @@ function create(req,res){
   })
 }
 
+// finds Flights, renders the index page, passing Flights to it
+function index(req,res){
+  Flight.find({})
+  .then(flights => {
+    res.render('flights/index', {
+      title: "All Flights",
+      flights: flights
+    })
+  })
+  .catch(error => {//if there's an error console.log it and redirect home
+    console.log(error, "create error")
+    res.redirect('/')
+  })
+
+}
+
 
 export{
   newFlight as new,
   create,
+  index,
 }

@@ -3,13 +3,17 @@ import { Router } from 'express'
 const router = Router()
 
 //import the controller functions
-import * as flightCtrl from '../controllers/flights.js'
+import * as flightsCtrl from '../controllers/flights.js'
+
+// GET /flight render the index
+router.get('/', flightsCtrl.index)
 
 // GET /flights/new   -new flight form
-router.get('/new', flightCtrl.new)
+router.get('/new', flightsCtrl.new)
 
 // POST /flights .create a new flight
-router.post('/', flightCtrl.create)
+router.post('/', flightsCtrl.create)
+
 
 export {
   router
