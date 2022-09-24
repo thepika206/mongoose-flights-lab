@@ -10,7 +10,7 @@ function create(req,res){
   Flight.create(req.body)
   .then(flight => {
     console.log(flight)
-    res.redirect('/flights/new')
+    res.redirect('/flights')
   })
   .catch(error => {//if there's an error console.log it and redirect home
     console.log(error, "create error")
@@ -31,7 +31,19 @@ function index(req,res){
     console.log(error, "create error")
     res.redirect('/')
   })
+}
 
+// delete flight, redirect to index route
+function deleteFlight(req,res){
+  console.log(req.params.id)
+  Flight.findByIdAndDelete(req.params.id)
+  .then(flight => {
+    res.redirect('/flights')
+  })
+  .catch(error => {//if there's an error console.log it and redirect home
+    console.log(error, "create error")
+    res.redirect('/')
+  })
 }
 
 
@@ -39,4 +51,5 @@ export{
   newFlight as new,
   create,
   index,
+  deleteFlight as delete
 }
