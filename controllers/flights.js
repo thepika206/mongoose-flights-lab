@@ -21,7 +21,10 @@ function create(req,res){
 // finds Flights, renders the index page, passing Flights to it
 function index(req,res){
   Flight.find({})
-  .then(flights => { //the returned array
+  .then(flights => { //the returned array sorted acend by date
+    flights.sort((a,b) => {
+      return a.departs - b.departs
+    })
     res.render('flights/index', {
       title: "All Flights",
       flights: flights
