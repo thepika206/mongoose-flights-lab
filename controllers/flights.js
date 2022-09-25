@@ -83,7 +83,6 @@ function deleteFlight(req,res){
   })
 }
 
-
 export{
   newFlight as new,
   create,
