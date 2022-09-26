@@ -39,7 +39,6 @@ const Flight = mongoose.model('Flight', flightSchema)
 function dateFromNow(days){
   let result = new Date()
   result.setDate(result.getDate() + days)
-  result = result.toISOString().slice(0,16) 
   return result
 }
 
