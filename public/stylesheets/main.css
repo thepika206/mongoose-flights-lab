@@ -70,6 +70,7 @@ nav > a:visited {
 nav > a:hover {
   color: white;
   background-color: #424748;
+  cursor: pointer;
 }
 
 nav > a.active {
@@ -78,4 +79,8 @@ nav > a.active {
 
 .fas::before {
   font-family: "Font Awesome 5 Free";
+}
+
+button:hover {
+  cursor: pointer;
 }

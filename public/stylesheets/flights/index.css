@@ -33,3 +33,8 @@ table td {
 #list a:hover {
   background-color: white;
 }
+
+table button:hover {
+  color: white;
+  background-color: #424748;
+}
