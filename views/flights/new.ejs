@@ -5,9 +5,16 @@
 <main>
   <h1><%= title %></h1>
   <form id="new-form" action="/flights" method="POST">
-    <!--! Departure Date -->
+
+    <!-- Departure Date -->
     <label for="departs-input">Departure Date:</label>
-    <input type="datetime-local" id="departs-input" name="departs" required>
+    <input 
+      type="datetime-local" 
+      id="departs-input" 
+      name="departs" 
+      value="<%= departureDefault %>" 
+      required
+    >
 
     <!-- Airline -->
     <label for="airline-input">Airline:</label>
