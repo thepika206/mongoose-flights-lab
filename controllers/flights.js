@@ -96,7 +96,7 @@ function deleteFlight(req,res){
 function dateFromNow(days){
   let result = new Date()
   result.setDate(result.getDate() + days)
-  result = result.toISOString().slice(0,10) + 'T00:00' //default date 1 from now,time 12:00am
+  result = result.toISOString().slice(0,16)
   return result
 }
 
