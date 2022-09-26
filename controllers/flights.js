@@ -1,10 +1,12 @@
 import { Flight } from '../models/flight.js'
 
+
+//* ============= Controller Functions ========================//
+
 function newFlight(req,res){
   res.render('flights/new', {
     title: 'Add Flight',
     departureDefault: dateFromNow(365),
-    // departureDefault: '2023-12-25T01:55'
   })
 }
 
@@ -88,6 +90,8 @@ function deleteFlight(req,res){
   })
 }
 
+
+//* =============Utility functions======================//
 // provide a date that is #days from today
 function dateFromNow(days){
   let result = new Date()
@@ -95,6 +99,9 @@ function dateFromNow(days){
   result = result.toISOString().slice(0,10) + 'T00:00' //default date 1 from now,time 12:00am
   return result
 }
+
+
+
 
 export{
   newFlight as new,
