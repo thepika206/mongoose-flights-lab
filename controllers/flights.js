@@ -97,6 +97,22 @@ function deleteFlight(req,res){
   })
 }
 
+function createTicket (req,res){
+  console.log('req.params.id', req.params.id)
+  console.log('req.body', req.body)
+  Flight.findById(req.params.id)
+  .then(flight => {
+    flight.tickets.push(req.body)
+    flight.save()
+    .then(()=> {
+      res.redirect(`/flights/${flight._id}`)
+    })
+  })
+  .catch(error => {//if there's an error console.log it and redirect home
+    console.log(error, "create error")
+    res.redirect('/')
+  })
+}
 
 //* =============Utility functions======================//
 // provide a date that is #days from today
@@ -117,5 +133,6 @@ export{
   deleteFlight as delete,
   show,
   edit,
-  update
+  update,
+  createTicket
 }
