@@ -34,7 +34,7 @@ const flightSchema = new Schema({
   },
   departs: {
     type: Date,
-    default: dateFromNow(365)
+    default: oneYearFromNow()
   },
   tickets: [ticketSchema]
 },{
@@ -46,11 +46,12 @@ const Flight = mongoose.model('Flight', flightSchema)
 
 //* =============Utility functions======================//
 // provide a date that is #days from today
-function dateFromNow(days){
-  let result = new Date()
-  result.setDate(result.getDate() + days)
-  return result
+function oneYearFromNow(){
+  const dt = new Date()
+  dt.setFullYear(dt.getFullYear()+1)
+  return dt
 }
+
 
 
 

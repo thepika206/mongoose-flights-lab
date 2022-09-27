@@ -4,9 +4,12 @@ import { Flight } from '../models/flight.js'
 //* ============= Controller Functions ========================//
 
 function newFlight(req,res){
+  const newFlight = new Flight()
+  //access the default date and convert to string as needed by the input
+  const departs = newFlight.departs.toISOString().slice(0,16)
   res.render('flights/new', {
     title: 'Add Flight',
-    departureDefault: dateFromNow(365),
+    departureDefault: departs,
   })
 }
 
@@ -107,6 +110,10 @@ function createTicket (req,res){
     .then(()=> {
       res.redirect(`/flights/${flight._id}`)
     })
+    .catch(error => {//if there's an error console.log it and redirect home
+      console.log(error, "create error")
+      res.redirect(`/flights/${flight._id}`)
+    })
   })
   .catch(error => {//if there's an error console.log it and redirect home
     console.log(error, "create error")
@@ -114,14 +121,6 @@ function createTicket (req,res){
   })
 }
 
-//* =============Utility functions======================//
-// provide a date that is #days from today
-function dateFromNow(days){
-  let result = new Date()
-  result.setDate(result.getDate() + days)
-  result = result.toISOString().slice(0,16)
-  return result
-}
 
 
 
