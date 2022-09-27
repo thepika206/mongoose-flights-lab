@@ -30,7 +30,8 @@ const flightSchema = new Schema({
   flightNo: {
     type: Number,
     min: 10,
-    max: 9999
+    max: 9999,
+    required: true,
   },
   departs: {
     type: Date,
