@@ -17,16 +17,16 @@ router.get('/:id', flightsCtrl.show)
 // GET flights/:id/edit
 router.get('/:id/edit', flightsCtrl.edit)
 
-// POST flights .create a new flight from form
+// POST flights/
 router.post('/', flightsCtrl.create)
 
 // POST flights/:id/tickets
 router.post('/:id/tickets', flightsCtrl.createTicket)
 
-// POST flights/:id override ?_method=DELETE
+// DELETE flights/:id
 router.delete('/:id', flightsCtrl.delete )
 
-// POST flights/:id/tickets/:id override ?_method=DELETE
+// DELETE flights/:id/tickets/:ticketId
 router.delete('/:id/tickets/:ticketId', flightsCtrl.deleteTicket)
 
 // PUT flight/:id override ?_method=PUT
