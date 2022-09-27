@@ -28,14 +28,6 @@
     </tbody>
   </table>
   <h2>Tickets</h2>
-  <form action="/flights/<%= flight._id %>/tickets" method="POST">
-    <label for="ticket-seat">Seat (A1-F99)</label>
-    <!-- <input type="text" id="ticket-seat" name="seat"> -->
-    <input name="seat" required pattern="[A-F][1-9]\d?">
-    <label for="ticket-price">Price</label>
-    <input type="number" id="ticket-price" name="price" min=0>
-    <button>Add Ticket</button>
-  </form>
   <% if (flight.tickets.length) { %>
     <table>
       <thead>
@@ -59,5 +51,13 @@
   <% } else { %>
     <h3>No Tickets Yet</h3>
   <% } %> 
+  <form action="/flights/<%= flight._id %>/tickets" method="POST">
+    <label for="ticket-seat">Seat (A1-F99)</label>
+    <!-- <input type="text" id="ticket-seat" name="seat"> -->
+    <input name="seat" required pattern="[A-F][1-9]\d?">
+    <label for="ticket-price">Price</label>
+    <input type="number" id="ticket-price" name="price" min=0>
+    <button>Add Ticket</button>
+  </form>
 </main>
 <%- include('../partials/footer') %>
