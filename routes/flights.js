@@ -26,6 +26,9 @@ router.post('/:id/tickets', flightsCtrl.createTicket)
 // POST flights/:id override ?_method=DELETE
 router.delete('/:id', flightsCtrl.delete )
 
+// POST flights/:id/tickets/:id override ?_method=DELETE
+router.delete('/:id/tickets/:ticketId', flightsCtrl.deleteTicket)
+
 // PUT flight/:id override ?_method=PUT
 router.put('/:id/', flightsCtrl.update)
 
