@@ -81,6 +81,14 @@ nav > a.active {
   font-family: "Font Awesome 5 Free";
 }
 
+
+button {
+  border-radius: 5px;
+  padding: 5px;
+}
+
 button:hover {
   cursor: pointer;
+  color: white;
+  background-color: #424748;
 }
