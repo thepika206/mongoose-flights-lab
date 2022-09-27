@@ -1,7 +1,6 @@
 import { Flight } from '../models/flight.js'
 
 
-//* ============= Controller Functions ========================//
 
 function newFlight(req,res){
   const newFlight = new Flight()

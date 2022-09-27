@@ -1,0 +1,19 @@
+<%- include('../partials/html-head') %> 
+<!-- <link rel="stylesheet" href="/stylesheets/flights/new.css"> -->
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="new-form" action="/meals" method="POST">
+    <!-- Departure Date -->
+    <label for="name-input">Meal:</label>
+    <input 
+      type="string" 
+      id="name-input" 
+      name="name" 
+    >
+    <button type="submit">Add Meal</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>
