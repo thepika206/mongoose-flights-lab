@@ -16,7 +16,12 @@
     <tbody>
       <% flights.forEach(flight => { %>
         <tr>
-          <td> <a href="/flights/<%=flight._id %>"><%= flight.departs %></a></td>
+          <!-- index.css will apply red text color for .past  -->
+          <td
+            class = "<%=
+              (new Date() > flight.departs) ? "past" : "" 
+            %>"
+          > <a href="/flights/<%=flight._id %>"><%= flight.departs %></a></td>
           <td> <%= flight.airline %> </td>
           <td> <%= flight.flightNo %> </td>
           <td> <%= flight.airport %> </td>
@@ -26,7 +31,7 @@
             </form>
           </td>
         </tr>
-        <% }) %>
+      <% }) %>
     </tbody>
   </table>
 </main>
