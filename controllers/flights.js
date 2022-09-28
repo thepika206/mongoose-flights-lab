@@ -110,6 +110,7 @@ function deleteFlight(req,res){
   })
 }
 
+//create an embedded ticket on flight
 function createTicket (req,res){
   Flight.findById(req.params.id)
   .then(flight => {
@@ -129,6 +130,7 @@ function createTicket (req,res){
   })
 }
 
+// delete ticket from flight
 function deleteTicket (req,res){
   Flight.findById(req.params.flightId)//find the parent document
   .then(flight=>{
@@ -148,6 +150,7 @@ function deleteTicket (req,res){
   })
 }
 
+//add meal to a flight
 function addMeal (req,res){
   Flight.findById(req.params.flightId)
   .then(flight => {
