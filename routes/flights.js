@@ -15,7 +15,7 @@ router.get('/new', flightsCtrl.new)
 router.get('/:flightId', flightsCtrl.show)
 
 // GET flights/:id/edit
-router.get('/:id/edit', flightsCtrl.edit)
+router.get('/:flightId/edit', flightsCtrl.edit)
 
 // POST flights/
 router.post('/', flightsCtrl.create)

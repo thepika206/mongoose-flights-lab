@@ -70,7 +70,7 @@ function show(req,res){
 }
 
 function edit(req,res){
-  Flight.findById(req.params.id)
+  Flight.findById(req.params.flightId)
   .then(flight=>{
     res.render('flights/edit', {
       title: 'Edit Flight',
