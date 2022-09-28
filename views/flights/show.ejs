@@ -59,5 +59,26 @@
     <input type="number" id="ticket-price" name="price" min=0>
     <button>Add Ticket</button>
   </form>
+  <h2>Flight Menu</h2>
+  <% if (flight.meals.length) { %>
+    <ul>
+      <% meals.forEach(meal => { %>
+        <li>
+          <%= meal.name %> 
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <h3>No Meals Added to Flight</h3>
+  <% } %>
+  <form action="/flights/<%= flight._id %>/meals" method="POST">
+    <label for="meal-form"></label>
+    <select name="meals" id="meal-form">
+      <% meals.forEach(meal => { %>
+        <option value=" <%= meal._id %>"> <%= meal.name %>  </option>
+      <% }) %>
+    </select>
+    <button>Add Meal</button>
+  </form>
 </main>
 <%- include('../partials/footer') %>
