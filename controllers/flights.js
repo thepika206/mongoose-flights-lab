@@ -112,7 +112,7 @@ function deleteFlight(req,res){
 
 //create an embedded ticket on flight
 function createTicket (req,res){
-  Flight.findById(req.params.id)
+  Flight.findById(req.params.flightId)
   .then(flight => {
     flight.tickets.push(req.body)
     flight.save()

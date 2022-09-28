@@ -21,7 +21,7 @@ router.get('/:id/edit', flightsCtrl.edit)
 router.post('/', flightsCtrl.create)
 
 // POST flights/:id/tickets
-router.post('/:id/tickets', flightsCtrl.createTicket)
+router.post('/:flightId/tickets', flightsCtrl.createTicket)
 
 // POST flights/:flightId/meals
 router.post('/:flightId/meals', flightsCtrl.addMeal)
