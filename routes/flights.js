@@ -32,8 +32,8 @@ router.delete('/:flightId', flightsCtrl.delete )
 // DELETE flights/:id/tickets/:ticketId
 router.delete('/:flightId/tickets/:ticketId', flightsCtrl.deleteTicket)
 
-// PUT flight/:id override ?_method=PUT
-router.put('/:id/', flightsCtrl.update)
+// PUT flight/:id update flight details
+router.put('/:flightId/', flightsCtrl.update)
 
 
 

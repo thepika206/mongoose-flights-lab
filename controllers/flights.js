@@ -87,7 +87,7 @@ function update(req,res){
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
 	}
-  Flight.findByIdAndUpdate(req.params.id, req.body, 
+  Flight.findByIdAndUpdate(req.params.flightId, req.body, 
     {new: true, runValidators: true})
   .then(flight => {
     res.redirect(`/flights/${flight._id}`)
