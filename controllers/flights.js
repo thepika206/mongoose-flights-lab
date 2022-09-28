@@ -149,7 +149,7 @@ function deleteTicket (req,res){
 }
 
 function addMeal (req,res){
-  Flight.findById(req.params.id)
+  Flight.findById(req.params.flightId)
   .then(flight => {
     flight.meals.push(req.body.mealId)
     flight.save()
