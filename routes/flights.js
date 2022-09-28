@@ -30,7 +30,7 @@ router.post('/:id/meals', flightsCtrl.addMeal)
 router.delete('/:id', flightsCtrl.delete )
 
 // DELETE flights/:id/tickets/:ticketId
-router.delete('/:id/tickets/:ticketId', flightsCtrl.deleteTicket)
+router.delete('/:flightId/tickets/:ticketId', flightsCtrl.deleteTicket)
 
 // PUT flight/:id override ?_method=PUT
 router.put('/:id/', flightsCtrl.update)

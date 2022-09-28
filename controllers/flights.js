@@ -130,7 +130,7 @@ function createTicket (req,res){
 }
 
 function deleteTicket (req,res){
-  Flight.findById(req.params.id)//find the parent document
+  Flight.findById(req.params.flightId)//find the parent document
   .then(flight=>{
     flight.tickets.id(req.params.ticketId).remove()//remove the child from the parent
     flight.save()
