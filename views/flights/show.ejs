@@ -62,7 +62,7 @@
   <h2>Flight Menu</h2>
   <% if (flight.meals.length) { %>
     <ul>
-      <% meals.forEach(meal => { %>
+      <% flight.meals.forEach(meal => { %>
         <li>
           <%= meal.name %> 
         </li>
@@ -73,9 +73,9 @@
   <% } %>
   <form action="/flights/<%= flight._id %>/meals" method="POST">
     <label for="meal-form"></label>
-    <select name="meals" id="meal-form">
+    <select name="mealId" id="meal-form">
       <% meals.forEach(meal => { %>
-        <option value=" <%= meal._id %>"> <%= meal.name %>  </option>
+        <option value="<%= meal._id %>" > <%= meal.name %>  </option>
       <% }) %>
     </select>
     <button>Add Meal</button>
