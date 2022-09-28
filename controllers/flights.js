@@ -100,7 +100,7 @@ function update(req,res){
 
 // delete flight, redirect to index route
 function deleteFlight(req,res){
-  Flight.findByIdAndDelete(req.params.id)
+  Flight.findByIdAndDelete(req.params.flightId)
   .then(flight => {
     res.redirect('/flights')
   })
