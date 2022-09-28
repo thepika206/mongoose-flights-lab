@@ -11,8 +11,8 @@ router.get('/', flightsCtrl.index)
 // GET flights/new   flight form
 router.get('/new', flightsCtrl.new)
 
-// GET flights/:id
-router.get('/:id', flightsCtrl.show)
+// GET flights/:id   show flight details
+router.get('/:flightId', flightsCtrl.show)
 
 // GET flights/:id/edit
 router.get('/:id/edit', flightsCtrl.edit)
