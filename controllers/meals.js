@@ -8,7 +8,7 @@ function newMeal(req,res){
     res.render('meals/new', {
       meals: meals,
       title: 'Add Meal',
-      mealMessage: 'Please Enter Meals'
+      mealMessage: ''
     })
   })
 }
